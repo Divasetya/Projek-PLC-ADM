@@ -20,7 +20,7 @@ body {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border-bottom: 1px solid #ddd;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     margin-left: 220px; /* Menggeser header ke kanan untuk memberi ruang untuk sidebar */
