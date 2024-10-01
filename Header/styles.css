@@ -1,191 +1,62 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-}
-
-.sidebar {
-  width: 220px; /* Lebar sidebar */
-  background-color: #f2f2f2; /* Warna latar belakang sidebar */
-  height: 100vh; /* Tinggi 100% viewport */
-  position: fixed; /* Tetap di posisi saat scroll */
-  left: 0; /* Posisi ke kiri */
-  top: 0; /* Posisi atas */
-  border-right: 1px solid #ddd; /* Garis pemisah */
-}
 
 .header {
-  background-color: #f2f2f2;
-  padding: 10px 20px;
+  background-color: #ffffff;
+  padding: 8px 20px;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  margin-left: 220px; /* Menggeser header ke kanan untuk memberi ruang untuk sidebar */
+  border-bottom: 1px solid #00065c;
 }
 
 .welcome-message {
   color: #e53935;
-  font-size: 20px;
-  font-weight: bold;
-  margin-right: 10px;
+  font-size: 17px;
+  font-weight: bold;  
 }
-
 .welcome-message span {
   color: #1e88e5;
   font-weight: bold;
 }
 
 .welcome-message p {
-  margin: 3px 0 0;
-  font-size: 14px;
-  color: gray;
+  margin: 2px;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
   font-weight: normal;
 }
 
 .search-bar {
+  margin: 8px auto; /* Mengatur margin atas dan bawah 10px, margin kiri dan kanan otomatis */
   display: flex;
   align-items: center;
   position: relative;
-  width: 600px;
-  margin: 0;
+  width: 480px; /* Lebar tetap 500px */
+  justify-content: flex-end /* Memposisikan konten di sebelah kanan */
 }
 
+
+
 .search-bar input {
-  padding: 10px 40px 10px 15px;
+  padding: 10px 20px 10px 12px;
   width: 100%;
   border-radius: 30px;
-  border: 1px solid #ddd;
+  border: 1px solid #00d5ff;
+  background: linear-gradient(to right, #001357 0%, #005fbd 100%);
   transition: all 0.3s ease-in-out;
   font-size: 14px;
 }
 
 .search-bar input:focus {
   outline: none;
-  border-color: #1e88e5;
-  box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+  border-color: #ffffff;
+  color: white;
+  text: 2px 2px 4px #ffffff;
+
 }
 
 .search-bar .icon {
   position: absolute;
   right: 15px;
   font-size: 20px;
-  color: #666;
+  color: #ffffff;
   cursor: pointer;
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-}
-
-.profile img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-right: 8px;
-  border: 2px solid #ddd;
-  transition: all 0.3s ease;
-}
-
-.profile img:hover {
-  transform: scale(1.05);
-  border-color: #1e88e5;
-}
-
-.profile-name {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.role {
-  font-size: 12px;
-  color: gray;
-  font-weight: normal;
-}
-
-.notification {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-left: 10px;
-  transition: transform 0.3s ease;
-}
-
-.notification:hover {
-  transform: scale(1.05);
-}
-
-.notification .material-icons {
-  cursor: pointer;
-  font-size: 24px;
-  color: #666;
-  transition: color 0.3s;
-}
-
-.notification .material-icons:hover {
-  color: #1e88e5;
-}
-
-.notification .badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  padding: 4px 6px;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 50px;
-  right: 0;
-  background-color: #fff;
-  min-width: 250px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown.active {
-  display: block;
-}
-
-.dropdown p {
-  padding: 10px;
-  margin: 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.dropdown p:last-child {
-  border-bottom: none;
-}
-
-/* Menambahkan padding untuk konten utama */
-.main-content {
-  margin-left: 220px; /* Menambahkan margin kiri */
-  padding: 20px; /* Menambahkan padding untuk konten */
-}
-
-@media screen and (max-width: 768px) {
-  .header {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px;
-      margin-left: 0; /* Menghapus margin kiri untuk tampilan kecil */
-  }
-  .search-bar {
-      width: 100%;
-      margin-top: 10px;
-  }
-  .sidebar {
-      display: none; /* Menyembunyikan sidebar di layar kecil */
-  }
 }
