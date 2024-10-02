@@ -61,7 +61,7 @@
   cursor: pointer;
 }
 .notification{
-    font-size: 15px;;
+    font-size: 15px;
     margin-right: 27rem;
     margin-top: -0.7rem;
 }
@@ -70,4 +70,10 @@
     border: none;
     padding: 0.6rem 0.8rem;
     border-radius: 50%;
+    margin-top: 0.4rem;
+}
+.profile{
+  color: #000000;
+  margin-left: 10rem;
+  font-size: 40px;
 }
