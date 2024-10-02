@@ -25,7 +25,7 @@
 }
 
 .search-bar {
-  margin: 8px auto; /* Mengatur margin atas dan bawah 10px, margin kiri dan kanan otomatis */
+  margin-left: 4rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -59,4 +59,15 @@
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;
+}
+.notification{
+    font-size: 15px;;
+    margin-right: 27rem;
+    margin-top: -0.7rem;
+}
+.notifButton{
+    background-color: #3086F3;
+    border: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 50%;
 }
