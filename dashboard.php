@@ -1,3 +1,6 @@
+<?php
+  include "ambilNilai.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,8 +16,10 @@
     <!-- iconify -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+    
   </head>
   <body style="height: 60rem; background-color: #dedede">
+    
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
       <!-- Sidebar Start -->
       <aside class="left-sidebar" style="background: linear-gradient(to bottom, #102742 0%, #0f67cf 100%)">
@@ -165,10 +170,19 @@
                 <div class="card" style="margin-bottom: 1rem; border-radius: 10px; background: linear-gradient(to right, #22028c 0%, #3c0bff 100%); height: 2rem">
                   <div class="card-body poppins-bold" style="color: white; padding-top: 5px; padding-left: 10px; text-align: center">Shibaura Machine DC 800T No.3</div>
                 </div>
+                <?php
+                  while($nilaiSensor = mysqli_fetch_assoc($ambil)){
+                ?>
+
                 <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Upper Water Cooling Flow (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"
-                    >4451.45</span
-                  >
+                  Upper Water Cooling Flow (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"><?php echo ['nilai_sensor']?></span>
+                </p>
+
+                <?php
+                  };
+                ?>
+                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
+                  Upper Water Cooling Flow (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"><?php echo ['nilai_sensor']?></span>
                 </p>
                 <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
                   Upper Die Int (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
@@ -177,9 +191,7 @@
                   Upper Re & Fr (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
                 </p>
                 <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Lower Air Cooling Flow (ltr/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"
-                    >4451.45</span
-                  >
+                  Lower Air Cooling Flow (ltr/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
                 </p>
                 <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
                   Lower Die In (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
