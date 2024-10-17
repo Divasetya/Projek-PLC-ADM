@@ -28,7 +28,7 @@
           <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="./index.html" class="text-nowrap logo-img poppins-semibold">
               <img style="margin-left: 2.5rem" src="src/image/icon Pabrik.png" alt="" width="140rem" />
-              <p style="color: white; margin-left: 1.5rem; font-size: 0.9rem">PT Astra Daihatsu Motor tbk</p>
+              <p style="color: white; margin-left: 1.5rem; font-size: 0.9rem">PT Astra Daihatsu Motor Tbk</p>
               <p style="color: white; margin-left: 2.8rem; line-height: 0.1rem; font-size: 0.8rem">Casting Plant Karawang</p>
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -171,17 +171,33 @@
                   <div class="card-body poppins-bold" style="color: white; padding-top: 5px; padding-left: 10px; text-align: center">Shibaura Machine DC 800T No.3</div>
                 </div>
                 <?php
-                  while($nilaiSensor = mysqli_fetch_assoc($ambil)){
+                  $daftarSensor = ambilNewSensor();
+                  // Check if $daftarSensor has values
+                    if (!empty($daftarSensor)) {
+                        $latestSensor = $daftarSensor[0]; // Assuming you want the first entry in the array
+                    } else {
+                        $latestSensor = null; // No data found, handle the error here
+                    }
                 ?>
+                <table id="myTable" class="display">
+                    <tbody>
+                        <tr style="color: white">
+                            <td>Upper Water Cooling Flow (ds/min)</td>
+                            <td>
+                            <?php
+                                if ($latestSensor) {
+                                    echo $latestSensor['time']; // Display the sensor value
+                                } else {
+                                    echo "No data available"; // Fallback if no sensor data
+                                }
+                            ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Upper Water Cooling Flow (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"><?php echo ['nilai_sensor']?></span>
-                </p>
-
-                <?php
-                  };
-                ?>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
+                
+                <!-- <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
                   Upper Water Cooling Flow (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"><?php echo ['nilai_sensor']?></span>
                 </p>
                 <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
@@ -220,7 +236,7 @@
                 </p>
                 <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
                   Gate & Yuguchi (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
+                </p> -->
               </div>
             </div>
           </div>
