@@ -4,7 +4,7 @@
         $hostname = 'localhost';
         $user = 'root';
         $password = '';
-        $database = 'data_logger';
+        $database = 'dummydatasensor';
 
         $koneksi = mysqli_connect ($hostname, $user, $password, $database) or die (mysqli_error());
         

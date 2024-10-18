@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="src/css/styles.min.css" />
     <link rel="stylesheet" href="src/css/dashboard.css" />
     <link rel="stylesheet" href="Header/styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!-- iconify -->
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
-    
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body style="height: 60rem; background-color: #dedede">
     
@@ -60,32 +60,8 @@
                 </a>
               </li>
 
-              <li class="nav-small-cap">
-                <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-                <span class="hide-menu poppins-semibold" style="font-size: 13px; color: white">Product Engineering</span>
-              </li>
-              <li class="sidebar-item">
-                <a class="sidebar-link" href="./index.html" aria-expanded="false" style="padding-left: 0; background-color: #00336d; box-shadow: 0px 3px 3px 1px black inset; margin-bottom: 7px">
-                  <iconify-icon icon="hugeicons:product-loading" style="color: white; font-size: 22px; margin-left: 0.9rem; margin-right: 0.2rem"></iconify-icon>
-                  <span class="hide-menu poppins-regular" style="font-size: 14px; color: white">Product</span>
-                  <span style="margin-left: 4.9rem"><img src="src/icon/weui--arrow-outlined.png" alt="" width="10px" height="25px" style="filter: invert(100%)" /></span>
-                </a>
-                <a class="sidebar-link" href="./index.html" aria-expanded="false" style="padding-left: 0; background-color: #00336d; box-shadow: 0px 3px 3px 1px black inset; margin-bottom: 7px">
-                  <iconify-icon icon="fluent:breakout-room-24-regular" style="color: white; font-size: 22px; margin-left: 0.9rem; margin-right: 0.2rem"></iconify-icon>
-                  <span class="hide-menu poppins-regular" style="font-size: 14px; color: white">Project Preparation</span>
-                  <span><img src="src/icon/weui--arrow-outlined.png" alt="" width="10px" height="25px" style="filter: invert(100%)" /></span>
-                </a>
-                <a class="sidebar-link" href="./index.html" aria-expanded="false" style="padding-left: 0; background-color: #00336d; box-shadow: 0px 3px 3px 1px black inset; margin-bottom: 7px">
-                  <iconify-icon icon="clarity:design-line" style="color: white; font-size: 22px; margin-left: 0.9rem; margin-right: 0.2rem"></iconify-icon>
-                  <span class="hide-menu poppins-regular" style="font-size: 14px; color: white">3D / Design</span>
-                  <span style="margin-left: 3.3rem"><img src="src/icon/weui--arrow-outlined.png" alt="" width="10px" height="25px" style="filter: invert(100%)" /></span>
-                </a>
-                <a class="sidebar-link" href="./index.html" aria-expanded="false" style="padding-left: 0; background-color: #00336d; box-shadow: 0px 3px 3px 1px black inset; margin-bottom: 7px">
-                  <iconify-icon icon="basil:document-outline" style="color: white; font-size: 22px; margin-left: 0.9rem; margin-right: 0.2rem"></iconify-icon>
-                  <span class="hide-menu poppins-regular" style="font-size: 14px; color: white">Administration</span>
-                  <span style="margin-left: 1.9rem"><img src="src/icon/weui--arrow-outlined.png" alt="" width="10px" height="25px" style="filter: invert(100%)" /></span>
-                </a>
-              </li>
+              
+              
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
                 <span class="hide-menu poppins-semibold" style="font-size: 14px; color: white">Support</span>
@@ -146,7 +122,7 @@
     </div>
 
     <!-- konten -->
-    <div class="d-flex justify-content-end" style="margin-top: 4.9rem; margin-left: 17rem; padding: 1rem 1rem">
+    <div class="d-flex justify-content-end" style="margin-top: 4.9rem; margin-left: 17rem; padding: 1rem 1rem;">
       <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0555b3; color: white; border-radius: 4px">11 - 17 Sept 2024</button>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -159,7 +135,7 @@
       <p class="poppins-semibold" style="color: black; font-weight: 600; font-size: 18px">Low Pressure 15 Sept 2024</p>
     </div>
 
-    <div class="card" style="margin-left: 18rem; width: 75.8rem; background-color: #00336d">
+    <div class="card" style="margin-left: 18rem; width: 75.8rem; background-color: #00336d;">
       <div class="card-body">
         <h5 class="card-title poppins-semibold" style="color: white">Production Report</h5>
         <hr style="background-color: white; opacity: 100%; height: 1.5px" />
@@ -186,7 +162,7 @@
                             <td>
                             <?php
                                 if ($latestSensor) {
-                                    echo $latestSensor['time']; // Display the sensor value
+                                    echo $latestSensor['SERIAL_No']; // Display the sensor value
                                 } else {
                                     echo "No data available"; // Fallback if no sensor data
                                 }
@@ -195,48 +171,6 @@
                         </tr>
                     </tbody>
                 </table>
-
-                
-                <!-- <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Upper Water Cooling Flow (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"><?php echo ['nilai_sensor']?></span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Upper Die Int (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Upper Re & Fr (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Lower Air Cooling Flow (ltr/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Lower Die In (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Lower Die Re & Fr (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Cooling Temp (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Molten Temp (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Cycle Time (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Lower Rear Water Cooling Flow (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"
-                    >4451.45</span
-                  >
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Flow Delay Cooling S/P (ds/min)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset"
-                    >4451.45</span
-                  >
-                </p>
-                <p class="poppins-regular" style="margin-bottom: 0.2rem; font-size: 11px; color: white; display: flex; justify-content: space-between">
-                  Gate & Yuguchi (°C)<span class="badge rounded-pill d-flex align-items-center" style="padding: 0rem 1rem; background-color: white; color: black; box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.249) inset">4451.45</span>
-                </p> -->
               </div>
             </div>
           </div>
@@ -361,6 +295,12 @@
             </button>
           </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <div><canvas id="myChart"></canvas></div>
+            <script src="dashboardjs/chart_pertama.js"></script>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -383,6 +323,7 @@
   </div> -->
 
     <!-- bootstrap -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
