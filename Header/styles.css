@@ -37,8 +37,6 @@
 .search-bar input {
   padding: 10px 20px 10px 12px;
   width: 100%;
-  border-radius: 30px;
-  border: 1px solid #00d5ff;
   background: linear-gradient(to right, #001357 0%, #005fbd 100%);
   transition: all 0.3s ease-in-out;
   font-size: 14px;
@@ -46,7 +44,6 @@
 
 .search-bar input:focus {
   outline: none;
-  border-color: #ffffff;
   color: white;
   text: 2px 2px 4px #ffffff;
 
@@ -54,7 +51,6 @@
 
 .search-bar .icon {
   position: absolute;
-  right: 15px;
   font-size: 20px;
   color: #ffffff;
   cursor: pointer;

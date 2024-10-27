@@ -3,11 +3,16 @@
 
     // $ambil = mysqli_query($koneksi,"SELECT * from detail") or die (mysqli_error($koneksi));
     function ambilNewSensor(){
-        $tabel_dummydata = mysqli_query(koneksi(), "SELECT * FROM `dummydata` ORDER BY timestamp DESC LIMIT 1") or die (mysqli_error(koneksi()));
+        $tabel_dummydata = mysqli_query(koneksi(), "SELECT * FROM dummydata ORDER BY timestamp DESC LIMIT 1") or die (mysqli_error(koneksi()));
         while ($row = mysqli_fetch_assoc($tabel_dummydata)){
             $sensor[] = $row;
         }
 
         return $sensor;
+    }
+
+    function labelChart(){
+        $serial_no = mysqli_query(koneksi(), "SELECT SERIAL_No FROM dummydata");
+        return $serial_no;
     }
 ?>
